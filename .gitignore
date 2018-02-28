@@ -1,0 +1,12 @@
+android/gradle
+android/.gradle
+.DS_Store
+.atom/
+.idea
+.vscode/
+.packages
+.pub/
+build/
+ios/.generated/
+packages
+.flutter-plugins
