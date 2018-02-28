@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../utils/question.dart';
 import '../utils/quiz.dart';
+
 import '../ui/answer_button.dart';
 import '../ui/question_text.dart';
 import '../ui/correct_wrong_overlay.dart';
+
+import './score_page.dart';
 
 class QuizPage extends StatefulWidget {
   @override
@@ -53,6 +56,14 @@ class QuizPageState extends State<QuizPage> {
         ),
         overlayShouldBeVisible
             ? new CorrectWorngOverlay(isCorrect, () {
+                if (quiz.length == questionNumber) {
+                  Navigator.of(context).pushAndRemoveUntil(
+                      new MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              new ScorePage(quiz.score, quiz.length)),
+                      (Route route) => route == null);
+                  return;
+                }
                 currentQuestion = quiz.nextQuestion;
                 this.setState(() {
                   overlayShouldBeVisible = false;
