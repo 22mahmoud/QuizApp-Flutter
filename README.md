@@ -1,6 +1,8 @@
-# quiz
+# quiz App with Flutter
 
-A new Flutter project.
+<div style="text-align: center;">
+<img src="https://i.imgur.com/9nYCiPV.gif" width="700"  />
+</div>
 
 ## Getting Started
 
